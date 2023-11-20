@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 def safe_print_list(my_list=[], x=0):
-    sum_total = 0
-    for i in range(x):
-        try:
+    count = 0
+    try:
+        for i in range(0, x):
             print(f"{my_list[i]}", end="")
-            sum_total += 1
-        except IndexError:
-            break
+            count += 1
+    except Exception:
+        print()
+        return count
     print()
-    return(sum_total)
+    return count
