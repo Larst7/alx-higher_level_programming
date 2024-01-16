@@ -1,10 +1,7 @@
--- Assuming you have already created the necessary table structure
-USE hbtn_0c_0;
-
--- Query to display the top 3 cities' temperatures during July and August
-SELECT city, temperature
-FROM temperatures
-WHERE month IN ('July', 'August')
-ORDER BY temperature DESC
+-- Displays the 3 cities with the highest average temperatures between July and August.
+SELECT `city`, AVG(`value`) AS `avg_temp`
+FROM `temperatures`
+WHERE `month` = 7 OR `month` = 8
+GROUP BY `city`
+ORDER BY `avg_temp` DESC
 LIMIT 3;
-
